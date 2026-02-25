@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Thiệp mời</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Georgia, "Times New Roman", serif;
+background:#f6f6f4;
+color:#222;
+}
+
+.wrap{
+max-width:700px;
+margin:auto;
+padding:40px 20px;
+}
+
+.card{
+background:white;
+border-radius:16px;
+padding:30px;
+border:1px solid #e5e7eb;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+position:relative;
+}
+
+.title{
+text-align:center;
+font-size:26px;
+letter-spacing:2px;
+margin-bottom:20px;
+}
+
+.divider{
+height:1px;
+background:#e5e7eb;
+margin:20px 0;
+}
+
+.msg{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.submsg{
+font-size:17px;
+margin-bottom:20px;
+}
+
+.row{
+display:grid;
+grid-template-columns:130px 1fr;
+margin-bottom:15px;
+}
+
+.label{
+color:#666;
+}
+
+.value{
+border-bottom:1px dashed #ccc;
+padding:6px 0;
+}
+
+a{
+color:#2563eb;
+text-decoration:none;
+}
+
+a:hover{
+text-decoration:underline;
+}
+
+/* Buttons */
+
+.buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+position:relative;
+height:120px;
+}
+
+button{
+padding:12px 22px;
+font-size:16px;
+border-radius:10px;
+border:none;
+cursor:pointer;
+transition:0.2s;
+}
+
+.ok{
+background:#111;
+color:white;
+margin-right:40px;
+}
+
+.ok:hover{
+background:black;
+}
+
+.no{
+background:#ddd;
+position:absolute;
+left:60%;
+top:0;
+}
+
+.footer{
+margin-top:20px;
+text-align:right;
+font-style:italic;
+font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+<div class="card">
+
+<div class="title">
+THIỆP MỜI
+</div>
+
+<div class="divider"></div>
+
+<div class="msg">
+Dear <strong>Phương</strong>,
+</div>
+
+<div class="submsg">
+Hello bạn vừa thông minh vừa xinh vừa gầy, bạn đồng ý đi chơi với em nhớ
+</div>
+
+
+<div class="row">
+<div class="label">Thời gian</div>
+<div class="value">
+Thứ 7, ngày 28/02/2026
+</div>
+</div>
+
+
+<div class="row">
+<div class="label">Địa điểm</div>
+<div class="value">
+
+<a href="https://www.instagram.com/ashtray_terracottahn/" target="_blank">
+Ashtray | Terracotta
+</a>
+
+(📍 Số 31 Ngõ 19 Liễu Giai, Hà Nội)
+
+</div>
+</div>
+
+
+<div class="divider"></div>
+
+
+<div class="buttons">
+
+<button class="ok"
+onclick="alert('Hẹn gặp bạn iu nhé')">
+Đồng ý
+</button>
+
+
+<button id="noBtn" class="no">
+Không đồng ý
+</button>
+
+
+</div>
+
+
+<div class="footer">
+Hiếu
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+const card = document.querySelector(".card");
+
+function moveButton(){
+
+const cardRect = card.getBoundingClientRect();
+
+const x = Math.random()*(cardRect.width-120);
+const y = Math.random()*(cardRect.height-120);
+
+noBtn.style.left = x+"px";
+noBtn.style.top = y+"px";
+
+}
+
+noBtn.addEventListener("mouseover",moveButton);
+noBtn.addEventListener("touchstart",moveButton);
+noBtn.addEventListener("click",moveButton);
+
+</script>
+
+</body>
+</html>
